@@ -1,0 +1,46 @@
+{
+  "name": "@flancer32/alarisa-comm",
+  "version": "0.1.0",
+  "description": "Shared communication contracts and implementations for Alarisa applications.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/flancer32/alarisa-comm.git"
+  },
+  "homepage": "https://github.com/flancer32/alarisa-comm",
+  "bugs": {
+    "url": "https://github.com/flancer32/alarisa-comm/issues"
+  },
+  "keywords": [
+    "alarisa",
+    "communication",
+    "isomorphic",
+    "protocol",
+    "teqfw"
+  ],
+  "types": "types.d.ts",
+  "files": [
+    "src/",
+    "types.d.ts"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "teqfw": {
+    "namespaces": [
+      {
+        "prefix": "Alarisa_Comm_",
+        "path": "./src",
+        "ext": ".mjs"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}
