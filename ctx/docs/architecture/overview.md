@@ -1,7 +1,7 @@
 # Architecture Overview
 
 - Path: `ctx/docs/architecture/overview.md`
-- Changed: `20260715`
+- Changed: `20260716`
 
 ## Purpose
 
@@ -17,6 +17,7 @@ The package may publish isomorphic TeqFW code with shared, server-side, and clie
 - `comm` remains orthogonal to `back`;
 - platform packages must not duplicate or own shared contracts;
 - runtime-specific adapters are added only when separation is justified;
+- the server-side Principal-contribution adapter owns `POST /api/v1/ingress/human` and delegates accepted transport input to `back`;
 - dependency cycles across package areas are forbidden by default.
 
 ## Product Dependency

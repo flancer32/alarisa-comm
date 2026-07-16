@@ -1,6 +1,6 @@
 {
   "name": "@flancer32/alarisa-comm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared communication contracts and implementations for Alarisa applications.",
   "type": "module",
   "license": "Apache-2.0",
@@ -38,6 +38,9 @@
   },
   "scripts": {
     "test": "node --test"
+  },
+  "dependencies": {
+    "@flancer32/teq-web": "0.15.0"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

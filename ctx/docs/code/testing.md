@@ -1,8 +1,8 @@
 # Testing Overview
 
 - Path: `ctx/docs/code/testing.md`
-- Changed: `20260715`
+- Changed: `20260716`
 
 ## Test Boundary
 
-The initial scaffold has no functional modules. `npm test`, package metadata checks, ADSM validation, and TeqFW validation for every future source module are required. Future contracts must be verified consistently for every exposed runtime side.
+`npm test` verifies versioned route matching, payload validation, durable-ingress delegation, conflicting identifier handling, and pass-through of unrelated routes. Package metadata checks, ADSM validation, and TeqFW validation remain required.
