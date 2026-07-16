@@ -2,7 +2,7 @@
 
 - Path: `ctx/docs/architecture/integration.md`
 - Template Version: `20260605`
-- Changed: `20260715`
+- Changed: `20260716`
 
 ## Purpose
 
@@ -18,7 +18,7 @@ Do not expand this section into protocol or endpoint detail unless a larger proj
 
 - `desk|mob -> shared browser auth client -> /api/v1/auth/` — converts WebAuthn binary values to and from the shared JSON representation without reading the `HttpOnly` session cookie;
 - `authentication HTTP adapter -> back auth service` — delegates trusted generation, verification, session, and credential operations;
-- `Principal contribution handler -> back ingress` — validates the shared contribution contract after the host session guard succeeds.
+- `Principal Message handler -> back ingress` — validates the shared message contract after the host session guard succeeds.
 
 This is not DTO documentation and not an OpenAPI replacement.
 
