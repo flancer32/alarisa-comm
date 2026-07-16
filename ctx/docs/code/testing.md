@@ -5,4 +5,4 @@
 
 ## Test Boundary
 
-`npm test` verifies versioned route matching, payload validation, durable-ingress delegation, conflicting identifier handling, and pass-through of unrelated routes. Package metadata checks, ADSM validation, and TeqFW validation remain required.
+`npm test` verifies versioned ingress behavior plus authentication route dispatch, session-cookie security attributes, safe fixed-Principal session responses, logout expiry, and pass-through of unrelated routes. Package metadata checks, browser syntax, ADSM validation, and TeqFW validation remain required.

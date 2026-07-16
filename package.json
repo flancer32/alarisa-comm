@@ -22,6 +22,7 @@
   "types": "types.d.ts",
   "files": [
     "src/",
+    "web/",
     "types.d.ts"
   ],
   "engines": {

@@ -16,7 +16,9 @@ Do not expand this section into protocol or endpoint detail unless a larger proj
 
 ## Internal Contracts
 
-Describe the major contract surfaces between architectural areas.
+- `desk|mob -> shared browser auth client -> /api/v1/auth/` — converts WebAuthn binary values to and from the shared JSON representation without reading the `HttpOnly` session cookie;
+- `authentication HTTP adapter -> back auth service` — delegates trusted generation, verification, session, and credential operations;
+- `Principal contribution handler -> back ingress` — validates the shared contribution contract after the host session guard succeeds.
 
 This is not DTO documentation and not an OpenAPI replacement.
 
@@ -25,3 +27,4 @@ This is not DTO documentation and not an OpenAPI replacement.
 - New integrations must be explicit here before they appear in implementation.
 - Integration descriptions must stay at architectural boundary level, not code or schema level.
 - Contradictions with product scope must be surfaced instead of normalized silently.
+- `comm` must not persist credentials, challenges, capabilities, or sessions and must not decide trusted verification policy.

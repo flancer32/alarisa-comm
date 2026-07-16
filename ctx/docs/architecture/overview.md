@@ -18,6 +18,8 @@ The package may publish isomorphic TeqFW code with shared, server-side, and clie
 - platform packages must not duplicate or own shared contracts;
 - runtime-specific adapters are added only when separation is justified;
 - the server-side Principal-contribution adapter owns `POST /api/v1/ingress/human` and delegates accepted transport input to `back`;
+- authentication contracts define `/api/v1/auth/` ceremonies, session status, logout, credential inspection and revocation; the Node adapter delegates trusted work to `back` and the shared browser module adapts native WebAuthn for both surfaces;
+- the package publishes its public browser module under the host-assigned `/_assets/comm/` scope and stores no Principal credential or session state;
 - dependency cycles across package areas are forbidden by default.
 
 ## Product Dependency

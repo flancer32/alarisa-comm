@@ -10,13 +10,16 @@ Record non-negotiable architecture restrictions and trust boundaries.
 
 ## Core Constraints
 
-List stable architectural properties that downstream environment and code work must respect.
-
-Examples may include offline-first behavior, transport choices, persistence assumptions, cost ceilings, latency boundaries, or trust boundaries.
+- authentication contracts serve exactly one fixed Principal and contain no account-selection identifier;
+- browser and Node adapters share route and response semantics without receiving private keys, biometric data, or server-stored session tokens;
+- the opaque cookie remains `Secure`, `HttpOnly`, `SameSite=Strict`, and scoped to `/api/v1/`;
+- static browser communication code remains public and carries no Principal data.
 
 ## Boundary Constraints
 
-Describe what architecture must not redefine or violate.
+- trusted WebAuthn verification, credential persistence, challenge state, enrollment policy, and session state remain in `back`;
+- platform packages must use the shared browser client rather than duplicate authentication routes or serialization;
+- `/hooks/` must never inherit the Principal browser-session contract.
 
 This section should make product and architecture boundaries explicit.
 
