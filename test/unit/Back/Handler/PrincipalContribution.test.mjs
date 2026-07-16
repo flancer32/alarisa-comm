@@ -44,14 +44,14 @@ test("accepts a valid versioned Principal contribution", async () => {
   });
   const contributionId = "test-contribution-0001";
   const context = {
-    request: request({body: JSON.stringify({contributionId, text: "  Привет  ", channel: "mob"})}),
+    request: request({body: JSON.stringify({contributionId, text: "  Hello  ", channel: "mob"})}),
     response: response(),
     completed: false,
   };
 
   await handler.handle(context);
 
-  assert.deepEqual(calls, [{contributionId, text: "Привет", channel: "mob"}]);
+  assert.deepEqual(calls, [{contributionId, text: "Hello", channel: "mob"}]);
   assert.equal(context.response.status, 202);
   assert.deepEqual(JSON.parse(context.response.body), {accepted: true, contributionId});
   assert.equal(context.completed, true);
@@ -82,7 +82,7 @@ test("reports conflicting contribution identifiers", async () => {
   error.code = "CONTRIBUTION_CONFLICT";
   const handler = new PrincipalContribution({dtoInfoFactory, STAGE, contract, ingress: {accept: async () => { throw error; }}});
   const context = {
-    request: request({body: JSON.stringify({contributionId: "test-contribution-0002", text: "Привет", channel: "mob"})}),
+    request: request({body: JSON.stringify({contributionId: "test-contribution-0002", text: "Hello", channel: "mob"})}),
     response: response(),
     completed: false,
   };

@@ -89,10 +89,10 @@ export async function currentSession() {
 }
 
 export async function registerAuthenticator(token) {
-  if (!window.PublicKeyCredential) throw new Error('Этот браузер не поддерживает passkeys.');
+  if (!window.PublicKeyCredential) throw new Error('This browser does not support passkeys.');
   const ceremony = await jsonRequest(routes.enrollmentOptions, {method: 'POST', body: JSON.stringify({token})});
   const credential = await navigator.credentials.create({publicKey: creationOptions(ceremony.options)});
-  if (!credential) throw new Error('Регистрация passkey была отменена.');
+  if (!credential) throw new Error('Passkey registration was cancelled.');
   return jsonRequest(routes.enrollmentVerify, {
     method: 'POST',
     body: JSON.stringify({ceremonyId: ceremony.ceremonyId, token, response: registrationResponse(credential)}),
@@ -100,10 +100,10 @@ export async function registerAuthenticator(token) {
 }
 
 export async function authenticate(surface) {
-  if (!window.PublicKeyCredential) throw new Error('Этот браузер не поддерживает passkeys.');
+  if (!window.PublicKeyCredential) throw new Error('This browser does not support passkeys.');
   const ceremony = await jsonRequest(routes.authenticationOptions, {method: 'POST', body: JSON.stringify({surface})});
   const credential = await navigator.credentials.get({publicKey: requestOptions(ceremony.options)});
-  if (!credential) throw new Error('Вход с passkey был отменён.');
+  if (!credential) throw new Error('Passkey sign-in was cancelled.');
   return jsonRequest(routes.authenticationVerify, {
     method: 'POST',
     body: JSON.stringify({ceremonyId: ceremony.ceremonyId, surface, response: authenticationResponse(credential)}),
