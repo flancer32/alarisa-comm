@@ -2,11 +2,12 @@ import assert from "node:assert/strict";
 import {EventEmitter} from "node:events";
 import test from "node:test";
 
-import contract from "../../../../src/Contract/PrincipalContribution.mjs";
+import Contract from "../../../../src/Contract/PrincipalContribution.mjs";
 import PrincipalContribution from "../../../../src/Back/Handler/PrincipalContribution.mjs";
 
 const STAGE = {PROCESS: "PROCESS"};
 const dtoInfoFactory = {create: (value) => Object.freeze(value)};
+const contract = new Contract();
 
 function request({method = "POST", url = contract.route, headers = {"content-type": "application/json"}, body = ""} = {}) {
   const req = new EventEmitter();

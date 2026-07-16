@@ -46,7 +46,7 @@ export default class PrincipalContribution {
    * @param {object} deps
    * @param {Fl32_Web_Back_Dto_Info__Factory} deps.dtoInfoFactory
    * @param {Fl32_Web_Back_Enum_Stage} deps.STAGE
-   * @param {Alarisa_Comm_Contract_PrincipalContribution} deps.contract
+   * @param {Alarisa_Comm_Contract_PrincipalContribution$} deps.contract
    * @param {{accept: function({contributionId: string, text: string, channel: string}): Promise<{accepted: true, contributionId: string}>}} deps.ingress
    */
   constructor({dtoInfoFactory, STAGE, contract, ingress}) {
