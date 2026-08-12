@@ -29,19 +29,23 @@
     "node": ">=20"
   },
   "teqfw": {
-    "namespaces": [
-      {
-        "prefix": "Alarisa_Comm_",
-        "path": "./src",
-        "ext": ".mjs"
+    "fw": {
+      "di": {
+        "namespaces": [
+          {
+            "prefix": "Alarisa_Comm_",
+            "path": "./src",
+            "ext": ".mjs"
+          }
+        ]
       }
-    ]
+    }
   },
   "scripts": {
     "test": "node --test"
   },
   "dependencies": {
-    "@flancer32/teq-web": "0.15.0"
+    "@teqfw/web": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

@@ -67,8 +67,8 @@ function errorStatus(error) {
 export default class Authentication {
   /**
    * @param {object} deps
-   * @param {Fl32_Web_Back_Dto_Info__Factory} deps.dtoInfoFactory
-   * @param {Fl32_Web_Back_Enum_Stage} deps.STAGE
+   * @param {TeqFw_Web_Back_Dto_Info__Factory} deps.dtoInfoFactory
+   * @param {TeqFw_Web_Back_Enum_Stage} deps.STAGE
    * @param {Alarisa_Comm_Contract_Authentication$} deps.contract
    * @param {Alarisa_Back_Auth_Service$} deps.auth
    */
@@ -140,8 +140,8 @@ export default class Authentication {
 }
 
 export const __deps__ = Object.freeze({
-  dtoInfoFactory: "Fl32_Web_Back_Dto_Info__Factory$",
-  STAGE: "Fl32_Web_Back_Enum_Stage$",
+  dtoInfoFactory: "TeqFw_Web_Back_Dto_Info__Factory$",
+  STAGE: "TeqFw_Web_Back_Enum_Stage$",
   contract: "Alarisa_Comm_Contract_Authentication$",
   auth: "Alarisa_Back_Auth_Service$",
 });

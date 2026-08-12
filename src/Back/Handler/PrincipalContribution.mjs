@@ -44,8 +44,8 @@ function respondJson(response, status, body) {
 export default class PrincipalContribution {
   /**
    * @param {object} deps
-   * @param {Fl32_Web_Back_Dto_Info__Factory} deps.dtoInfoFactory
-   * @param {Fl32_Web_Back_Enum_Stage} deps.STAGE
+   * @param {TeqFw_Web_Back_Dto_Info__Factory} deps.dtoInfoFactory
+   * @param {TeqFw_Web_Back_Enum_Stage} deps.STAGE
    * @param {Alarisa_Comm_Contract_PrincipalContribution$} deps.contract
    * @param {{accept: function({contributionId: string, text: string, channel: string}): Promise<{accepted: true, contributionId: string}>}} deps.ingress
    */
@@ -115,8 +115,8 @@ export default class PrincipalContribution {
 }
 
 export const __deps__ = Object.freeze({
-  dtoInfoFactory: "Fl32_Web_Back_Dto_Info__Factory$",
-  STAGE: "Fl32_Web_Back_Enum_Stage$",
+  dtoInfoFactory: "TeqFw_Web_Back_Dto_Info__Factory$",
+  STAGE: "TeqFw_Web_Back_Enum_Stage$",
   contract: "Alarisa_Comm_Contract_PrincipalContribution$",
   ingress: "Alarisa_Back_Ingress_Human$",
 });
