@@ -22,6 +22,7 @@
   "types": "types.d.ts",
   "files": [
     "src/",
+    "skills/",
     "web/",
     "types.d.ts"
   ],
